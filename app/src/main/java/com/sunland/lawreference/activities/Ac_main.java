@@ -63,6 +63,9 @@ public class Ac_main extends Ac_base {
             case R.id.law_ref_collect:
                 hop2Activity(Ac_collect.class);
                 break;
+            case R.id.browser_track:
+                hop2Activity(Ac_browser_track.class);
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

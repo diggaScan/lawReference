@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.sunland.lawreference.R;
 import com.sunland.lawreference.WindowInfoUtils;
+import com.sunland.lawreference.db.BrowserTrackBean;
 import com.sunland.lawreference.db.LawReferenceBean;
 import com.sunland.lawreference.db.MdbOpenHelper;
 import com.sunland.lawreference.db.MyDatabase;
@@ -87,6 +88,7 @@ public class Ac_info_detail extends Ac_base {
     }
 
     private void initView() {
+        recordBrowserHis();
         fab_collect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,6 +131,20 @@ public class Ac_info_detail extends Ac_base {
         });
     }
 
+    private void recordBrowserHis() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                MdbOpenHelper.createDb(Ac_info_detail.this);
+                BrowserTrackBean bean = new BrowserTrackBean();
+                bean.fileNameCN = titleCN;
+                bean.fileNameEN = fileName;
+                bean.timeStamp = System.currentTimeMillis();
+                MyDatabase mdb = MdbOpenHelper.getDb();
+                mdb.getTrackDao().insert(bean);
+            }
+        }).start();
+    }
 
     @Override
     protected void onDestroy() {
@@ -166,11 +182,11 @@ public class Ac_info_detail extends Ac_base {
                         mode += 1;
                         break;
                     case MotionEvent.ACTION_MOVE:
-                        if (event.getY() - down_point_y > WindowInfoUtils.dp2px(Ac_info_detail.this,10) && !isShow) {
+                        if (event.getY() - down_point_y > WindowInfoUtils.dp2px(Ac_info_detail.this, 10) && !isShow) {
                             fab_collect.setVisibility(View.VISIBLE);
                             fab_collect.startAnimation(AnimationUtils.loadAnimation(Ac_info_detail.this, R.anim.fab_show_up_anim));
                             isShow = true;
-                        } else if (event.getY() - down_point_y < -WindowInfoUtils.dp2px(Ac_info_detail.this,10) && isShow) {
+                        } else if (event.getY() - down_point_y < -WindowInfoUtils.dp2px(Ac_info_detail.this, 10) && isShow) {
                             fab_collect.startAnimation(AnimationUtils.loadAnimation(Ac_info_detail.this, R.anim.fab_fade_away_anim));
                             fab_collect.setVisibility(View.GONE);
                             isShow = false;

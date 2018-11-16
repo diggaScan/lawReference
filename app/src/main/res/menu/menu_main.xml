@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/law_ref_collect"
         android:icon="@drawable/ic_collect"
-        android:iconTint="@color/white"
         android:title="收藏夹"
-        app:showAsAction="always" />
+        app:showAsAction="never" />
+    <item android:title="浏览记录"
+        android:id="@+id/browser_track"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_browser_track"/>
 
 </menu>
