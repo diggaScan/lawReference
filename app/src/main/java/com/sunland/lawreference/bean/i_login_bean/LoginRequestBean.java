@@ -1,5 +1,6 @@
 package com.sunland.lawreference.bean.i_login_bean;
 
+
 import com.sunland.lawreference.bean.BaseRequestBean;
 
 public class LoginRequestBean extends BaseRequestBean {
