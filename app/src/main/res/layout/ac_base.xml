@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:id="@+id/root">
+    android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
-        android:fitsSystemWindows="true"
-        android:background="@drawable/toolbar_bkg"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?android:actionBarSize"
+        android:background="@drawable/toolbar_bkg"
+        android:fitsSystemWindows="true"
         app:contentInsetStart="0dp">
 
         <RelativeLayout
@@ -19,29 +19,29 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:scaleType="center"
                 android:id="@+id/nav_back"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
+                android:scaleType="center"
                 android:src="@drawable/ic_arrow_back_24dp"
                 android:visibility="gone" />
 
             <TextView
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:ellipsize="marquee"
-                android:singleLine="true"
-                android:layout_toRightOf="@id/nav_back"
-                android:textColor="@color/white"
-                android:textSize="20sp"
                 android:id="@+id/toolbar_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"/>
+                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@id/nav_back"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
 

@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.sunland.lawreference.R;
-import com.sunland.lawreference.WindowInfoUtils;
+import com.sunland.lawreference.utils.WindowInfoUtils;
 
 
 public class Rv_Item_decoration extends RecyclerView.ItemDecoration {

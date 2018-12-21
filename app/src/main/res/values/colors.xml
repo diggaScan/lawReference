@@ -14,4 +14,8 @@
 
     <!--law_text_color-->
     <color name="law_title_color">#4d4d4d</color>
+
+    <!--dialog_utils-->
+    <color name="progress_gray">#aea6a6</color>
+    <color name="dialog_backgrounf">#a4313131</color>
 </resources>

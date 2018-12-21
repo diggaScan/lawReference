@@ -2,8 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sunland.lawreference">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -11,16 +14,31 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.Ac_main">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <meta-data
+            android:name="flavour"
+            android:value="${FLAVOUR_VALUE}" />
+        <meta-data
+            android:name="category"
+            android:value="${CATEGORY_VALUE}" />
+        <meta-data
+            android:name="plateform"
+            android:value="${PLATEFORM_VALUE}" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+        <activity
+            android:name=".activities.Ac_splash"
+            android:theme="@style/AppTheme.splash">
+            <intent-filter>
+                <action android:name="${PLATEFORM_VALUE}.intent.action.MAIN" />
+                <category android:name="${PLATEFORM_VALUE}.intent.category.${CATEGORY_VALUE}" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.Ac_info_detail"/>
-        <activity android:name=".activities.Ac_collect"/>
-        <activity android:name=".activities.Ac_browser_track"/>
+        <activity android:name=".activities.Ac_main" />
+        <activity
+            android:name=".activities.Ac_login"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity android:name=".activities.Ac_info_detail" />
+        <activity android:name=".activities.Ac_collect" />
+        <activity android:name=".activities.Ac_browser_track" />
     </application>
 
 </manifest>

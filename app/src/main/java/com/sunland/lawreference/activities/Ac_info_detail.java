@@ -11,7 +11,7 @@ import android.webkit.WebView;
 import android.widget.Toast;
 
 import com.sunland.lawreference.R;
-import com.sunland.lawreference.WindowInfoUtils;
+import com.sunland.lawreference.utils.WindowInfoUtils;
 import com.sunland.lawreference.db.BrowserTrackBean;
 import com.sunland.lawreference.db.LawReferenceBean;
 import com.sunland.lawreference.db.MdbOpenHelper;

@@ -1,4 +1,4 @@
-package com.sunland.lawreference;
+package com.sunland.lawreference.utils;
 
 import android.content.Context;
 import android.content.res.Resources;
