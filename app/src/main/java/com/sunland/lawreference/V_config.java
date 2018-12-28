@@ -21,4 +21,5 @@ public final class V_config {
     public static String gpsinfo = gpsX + gpsY;
     //用户代码
     public static String YHDM;
+    public final static String DLMK = "杭州执法参考";
 }
