@@ -118,12 +118,10 @@ public class Ac_login extends Ac_base implements OnRequestCallback {
         //code 0 允许登录
         //code 1 登录失败
         if (loginResBean.getCode().equals("0")) {
+            V_config.YHDM = et_username.getText().toString();
             saveLog(0, OperationLog.OperationResult.CODE_SUCCESS, appendString(V_config.YHDM, V_config.BRAND,
                     V_config.MODEL));//yhdm,手机品牌，手机型号，警号
-            String bm_code = loginResBean.getDljyxx().getBmcode().substring(0, 6);
-            Bundle bundle = new Bundle();
-            bundle.putString("bmcode", bm_code);
-            hop2Activity(Ac_main.class, bundle);
+            hop2Activity(Ac_main.class);
         } else {
             saveLog(0, OperationLog.OperationResult.CODE_FAILURE,
                     appendString(V_config.YHDM, V_config.BRAND, V_config.MODEL));

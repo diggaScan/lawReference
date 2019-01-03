@@ -42,7 +42,7 @@ public class Ac_base extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         container = findViewById(R.id.container);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP&&setImmersive()) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && setImmersive()) {
             Window window = getWindow();
             window.setStatusBarColor(Color.TRANSPARENT);
             window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
@@ -89,14 +89,18 @@ public class Ac_base extends AppCompatActivity {
     //pstore日志记录
     public void saveLog(int operateType, int operationResult, String operateCondition) {
         if (mApplication.isAppCyber()) {
-            OperationLog.saveLog(this
-                    , getTitle().toString()
-                    , "com.sunland.lawreference"
-                    , "lawreference"
-                    , operateType
-                    , OperationLog.OperationResult.CODE_SUCCESS
-                    , 1
-                    , operateCondition);
+            try {
+                OperationLog.saveLog(this
+                        , "F9746352AEB3A7114830048EE2230631"
+                        , getApplication().getPackageName()
+                        , operateType
+                        , operationResult
+                        , 1
+                        , operateCondition);
+            } catch (Exception e) {
+                //未适配Fileprovider
+                e.printStackTrace();
+            }
         } else {
             return;
         }

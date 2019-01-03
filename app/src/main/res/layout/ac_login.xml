@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -44,8 +45,7 @@
                         android:hint="用户名"
                         android:inputType="text"
                         android:maxLines="1"
-                        android:singleLine="true"
-                        android:text="012146" />
+                        android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -63,8 +63,7 @@
                         android:imeOptions="actionUnspecified"
                         android:inputType="textPassword"
                         android:maxLines="1"
-                        android:singleLine="true"
-                        android:text="123" />
+                        android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
 
